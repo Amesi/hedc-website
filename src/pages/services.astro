@@ -2,16 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 
 const services = [
-  { icon: '🦷', name: 'General Dental Check-up', price: 'K150', dur: '30 min', desc: 'Comprehensive oral examination including visual inspection, gum assessment, and oral cancer screening.' },
-  { icon: '✨', name: 'Teeth Cleaning (Scale & Polish)', price: 'K200', dur: '45 min', desc: 'Professional removal of plaque, tartar, and surface stains for a cleaner, healthier smile.' },
-  { icon: '🛠️', name: 'Tooth Filling (Restoration)', price: 'K250', dur: '45 min', desc: 'Composite/white fillings to restore teeth damaged by cavities. Natural-looking results.' },
-  { icon: '🔧', name: 'Tooth Extraction', price: 'K200', dur: '30 min', desc: 'Gentle, professional tooth removal when needed. We prioritise your comfort throughout.' },
-  { icon: '🔬', name: 'Root Canal Therapy', price: 'K800', dur: '90 min', desc: 'Save an infected or damaged tooth with professional root canal treatment. Pain-free with modern anaesthesia.' },
-  { icon: '🌟', name: 'Teeth Whitening', price: 'K500', dur: '60 min', desc: 'Professional whitening treatment for a noticeably brighter smile in just one session.' },
-  { icon: '💎', name: 'Crown & Bridge', price: 'K1,200', dur: '90 min', desc: 'Durable crowns and bridges to restore function and appearance of damaged or missing teeth.' },
-  { icon: '🦷', name: 'Dental Implant Consultation', price: 'K300', dur: '45 min', desc: 'Comprehensive assessment and treatment planning for dental implants.' },
-  { icon: '🍃', name: 'Buai Stain Removal', price: 'K180', dur: '45 min', desc: 'Specialised deep cleaning to remove betel nut stains and restore your natural tooth colour. 🇵🇬 PNG favourite!' },
-  { icon: '👶', name: "Children's Dentistry", price: 'K120', dur: '30 min', desc: 'Gentle, fun dental check-ups for kids. Building healthy habits from an early age.' },
+  { icon: 'tooth', name: 'General Dental Check-up', price: 'K150', dur: '30 min', desc: 'Comprehensive oral examination including visual inspection, gum assessment, and oral cancer screening.' },
+  { icon: 'stars', name: 'Teeth Cleaning (Scale & Polish)', price: 'K200', dur: '45 min', desc: 'Professional removal of plaque, tartar, and surface stains for a cleaner, healthier smile.' },
+  { icon: 'shield', name: 'Tooth Filling (Restoration)', price: 'K250', dur: '45 min', desc: 'Composite/white fillings to restore teeth damaged by cavities. Natural-looking results.' },
+  { icon: 'syringe', name: 'Tooth Extraction', price: 'K200', dur: '30 min', desc: 'Gentle, professional tooth removal when needed. We prioritise your comfort throughout.' },
+  { icon: 'stethoscope', name: 'Root Canal Therapy', price: 'K800', dur: '90 min', desc: 'Save an infected or damaged tooth with professional root canal treatment. Pain-free with modern anaesthesia.' },
+  { icon: 'stars', name: 'Teeth Whitening', price: 'K500', dur: '60 min', desc: 'Professional whitening treatment for a noticeably brighter smile in just one session.' },
+  { icon: 'shield', name: 'Crown & Bridge', price: 'K1,200', dur: '90 min', desc: 'Durable crowns and bridges to restore function and appearance of damaged or missing teeth.' },
+  { icon: 'tooth', name: 'Dental Implant Consultation', price: 'K300', dur: '45 min', desc: 'Comprehensive assessment and treatment planning for dental implants.' },
+  { icon: 'search-tooth', name: 'Buai Stain Removal', price: 'K180', dur: '45 min', desc: 'Specialised deep cleaning to remove betel nut stains and restore your natural tooth colour. 🇵🇬 PNG favourite!' },
+  { icon: 'heart-pulse', name: "Children's Dentistry", price: 'K120', dur: '30 min', desc: 'Gentle, fun dental check-ups for kids. Building healthy habits from an early age.' },
 ];
 ---
 
@@ -29,7 +29,7 @@ const services = [
       <div class="grid-2">
         {services.map((s) => (
           <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
-            <div style="font-size: 1.75rem; flex-shrink: 0; width: 52px; text-align: center; margin-top: 0.15rem;">{s.icon}</div>
+            <svg class="icon-gold" style="width:28px;height:28px;flex-shrink:0;margin-top:0.25rem;"><use href={"/icons/" + s.icon + ".svg#svg-view"}/></svg>
             <div style="flex: 1;">
               <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
                 <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em;">{s.name}</h3>
