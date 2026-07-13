@@ -2,14 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hedc-website",
   "compatibility_date": "2026-07-13",
+  "main": "worker.js",
   "assets": {
     "directory": "dist"
   },
-  "workers_dev": true,
-  "routes": [
-    {
-      "pattern": "hedc.kumi-tech.com",
-      "custom_domain": true
-    }
-  ]
+  "workers_dev": true
 }
