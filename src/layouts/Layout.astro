@@ -336,40 +336,17 @@ const { title, description } = Astro.props;
         .shimmer { animation: none !important; -webkit-text-fill-color: #3a2f08 !important; }
       }
 
-      /* Mobile responsive — in is:inline to prevent Astro stripping */
       @media (max-width: 768px) {
-        .container { padding: 0 1rem !important; }
-        .heading-xl { font-size: 1.8rem !important; letter-spacing: -0.01em !important; }
-        .heading-lg, .section-title { font-size: 1.5rem !important; }
-        .hero-section { padding: 2rem 0 !important; }
         .hero-grid { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
         .hero-grid .hero-image { min-height: 140px !important; max-height: 180px !important; order: -1 !important; }
         .hero-grid .badge { margin-bottom: 0.5rem !important; font-size: 0.72rem !important; }
         .hero-grid p { font-size: 0.9rem !important; margin-bottom: 1rem !important; }
         .hero-ctas { flex-direction: column !important; gap: 0.5rem !important; }
         .hero-ctas .btn { width: 100% !important; justify-content: center !important; }
+        .hero-section { padding: 2rem 0 !important; }
+        .heading-xl { font-size: 1.8rem !important; }
         .section { padding: 2rem 0 !important; }
-        .section-title { margin-bottom: 0.5rem !important; }
-        .section-subtitle { font-size: 0.9rem !important; max-width: 100% !important; }
-        footer .container { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
-        nav { flex-wrap: wrap !important; gap: 0.4rem !important; }
-        .logo { font-size: 1rem !important; }
-        .logo-icon { width: 28px !important; height: 28px !important; font-size: 0.85rem !important; }
-        .logo-sub { font-size: 0.55rem !important; }
-        .nav-links { order: 3 !important; width: 100% !important; justify-content: center !important; gap: 0.1rem !important; }
-        .nav-links a { font-size: 0.75rem !important; padding: 0.3rem 0.5rem !important; }
-        .nav-cta { font-size: 0.75rem !important; padding: 0.35rem 0.75rem !important; }
-        .top-bar .container { flex-direction: column !important; gap: 0.15rem !important; justify-content: center !important; text-align: center !important; }
-        .top-bar { font-size: 0.65rem !important; padding: 0.35rem 0 !important; }
-        .grid-2, .grid-3, .grid-4, .grid-5 { gap: 0.75rem !important; }
-        .card { padding: 1rem !important; border-radius: var(--radius) !important; }
-        .card h3 { font-size: 0.9rem !important; }
-        .card p { font-size: 0.82rem !important; }
-        .img-placeholder { min-height: 130px !important; font-size: 0.65rem !important; border-radius: var(--radius) !important; }
-        .btn { padding: 0.6rem 1.25rem !important; font-size: 0.85rem !important; }
-        .badge { font-size: 0.7rem !important; padding: 0.15rem 0.5rem !important; }
-        .price-badge { font-size: 0.75rem !important; }
-        footer { padding: 2.5rem 0 1.5rem !important; }
+        .container { padding: 0 1rem !important; }
       }
     </style>
   </head>
@@ -489,6 +466,11 @@ const { title, description } = Astro.props;
           el.setAttribute('data-suffix', el.textContent.replace(/[0-9]/g, ''));
           counterObserver.observe(el);
         });
+
+        // Inject mobile CSS override after external stylesheets have loaded
+        var ms = document.createElement('style');
+        ms.textContent = '@media (max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:.75rem!important}.hero-grid .hero-image{min-height:140px!important;max-height:180px!important;order:-1!important}.hero-grid .badge{margin-bottom:.5rem!important;font-size:.72rem!important}.hero-grid p{font-size:.9rem!important;margin-bottom:1rem!important}.hero-ctas{flex-direction:column!important;gap:.5rem!important}.hero-ctas .btn{width:100%!important;justify-content:center!important}.hero-section{padding:2rem 0!important}.heading-xl{font-size:1.8rem!important}.section{padding:2rem 0!important}}';
+        document.head.appendChild(ms);
       }
     })();
     </script>
