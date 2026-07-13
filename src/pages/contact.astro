@@ -3,73 +3,61 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact Us — Hope Essence Dental Clinic">
-  <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 4rem 0 3rem;">
+  <section style="background: var(--gold-tint); padding: 4rem 0 3rem;">
     <div class="container" style="text-align: center;">
-      <h1 style="font-family: var(--font-serif); font-size: 2.4rem; margin-bottom: 0.75rem;">Contact Us</h1>
-      <p style="opacity: .9;">We're here to help. Call, WhatsApp, or visit us.</p>
+      <h1 class="section-title" style="font-size: 3rem;">Get in Touch</h1>
+      <p class="section-subtitle" style="max-width: 450px;">We're here to help. Call, WhatsApp, or visit us.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
       <div class="grid-2">
-        <!-- Contact details -->
         <div>
-          <h2 class="section-title">Get in Touch</h2>
-          
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">📞 Phone</h3>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📞 Phone</h3>
             <p><a href="tel:+67578352045">+675 7835 2045</a></p>
             <p><a href="tel:+67571894912">+675 7189 4912</a></p>
             <p><a href="tel:+67572928301">+675 7292 8301</a></p>
           </div>
-
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">📧 Email</h3>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📧 Email</h3>
             <p><a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a></p>
           </div>
-
           <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">📍 Location</h3>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📍 Location</h3>
             <p>GB Haus, Office 17, Kunai Street</p>
             <p>Section 5, Lot 225, Hohola</p>
             <p>Port Moresby, NCD, Papua New Guinea</p>
           </div>
-
           <div class="card">
-            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">🕐 Opening Hours</h3>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">🕐 Opening Hours</h3>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; font-size: .9rem;">
               <span>Monday – Friday</span><span style="text-align: right; font-weight: 500;">8:00 AM – 5:00 PM</span>
               <span>Saturday</span><span style="text-align: right; font-weight: 500;">8:00 AM – 1:00 PM</span>
-              <span>Sunday</span><span style="text-align: right; font-weight: 500; color: var(--text-light);">Closed</span>
+              <span>Sunday</span><span style="text-align: right; color: var(--text-muted);">Closed</span>
             </div>
           </div>
         </div>
-
-        <!-- Map / CTA -->
         <div>
-          <div class="card" style="height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-            <div style="font-size: 3rem; margin-bottom: 1rem;">📍</div>
-            <h3 style="margin-bottom: 0.75rem;">Visit Our Clinic</h3>
-            <p style="color: var(--text-light); margin-bottom: 0.5rem;">GB Haus, Kunai Street, Hohola</p>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem;">Port Moresby, NCD</p>
-            <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 300px;">
-              <a href="/book" class="btn btn-primary" style="justify-content: center;">📅 Book Appointment</a>
-              <a href="https://wa.me/67578352045" class="btn btn-accent" style="justify-content: center;" target="_blank">💬 WhatsApp Us</a>
-            </div>
+          <div class="img-placeholder" style="min-height: 300px; margin-bottom: 1rem;">[ MAP ]</div>
+          <div class="card" style="background: var(--gold-light); border-color: var(--gold); text-align: center; padding: 2rem;">
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">💬 Book via WhatsApp</h3>
+            <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 1rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
+            <a href="https://wa.me/67578352045" target="_blank" class="btn btn-whatsapp">WhatsApp +675 7835 2045</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background: var(--bg-alt); text-align: center;">
+  <section class="section section-alt" style="text-align: center;">
     <div class="container" style="max-width: 600px;">
       <h2 class="section-title">Emergency Dental Care</h2>
-      <p style="color: var(--text-light); margin-bottom: 1.5rem;">
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
         Toothache? Broken tooth? We handle dental emergencies. Walk-ins welcome during opening hours.
       </p>
-      <a href="tel:+67578352045" class="btn btn-primary" style="font-size: 1.1rem;">📞 Call Now: +675 7835 2045</a>
+      <a href="tel:+67578352045" class="btn btn-gold" style="font-size: 1.1rem;">📞 Call Now: +675 7835 2045</a>
     </div>
   </section>
 </Layout>
