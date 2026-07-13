@@ -15,7 +15,7 @@ const services = [
 ];
 ---
 
-<Layout title="Our Services — Hope Essence Dental Clinic">
+<Layout title="Our Services — Hope Essence Dental Clinic" path="/services">
   <section style="background: var(--gold-tint); padding: 4rem 0 3.5rem;">
     <div class="container" style="text-align: center;">
       <span class="badge" style="margin-bottom: 0.75rem;">Our Services</span>
@@ -29,7 +29,9 @@ const services = [
       <div class="grid-2">
         {services.map((s) => (
           <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
-            <svg class="icon-gold" style="width:28px;height:28px;flex-shrink:0;margin-top:0.25rem;"><use href={"/icons/" + s.icon + ".svg#svg-view"}/></svg>
+            <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.15rem;">
+              <svg class="icon-gold" style="width:24px;height:24px;"><use href={"/icons/" + s.icon + ".svg#svg-view"}/></svg>
+            </div>
             <div style="flex: 1;">
               <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
                 <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em;">{s.name}</h3>

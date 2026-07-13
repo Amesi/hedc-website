@@ -3,8 +3,9 @@
 export interface Props {
   title: string;
   description?: string;
+  path?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, path } = Astro.props;
 ---
 
 <!doctype html>
@@ -121,10 +122,21 @@ const { title, description } = Astro.props;
       }
       .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; }
       .nav-links a {
-        padding: 0.45rem 1rem; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 500;
-        color: var(--text-body); transition: all 0.2s; letter-spacing: 0.01em;
+        padding: 0.45rem 0.25rem; border-radius: 0; font-size: 0.88rem; font-weight: 500;
+        color: var(--text-body); transition: color 0.2s; letter-spacing: 0.01em;
+        position: relative; background: transparent !important;
       }
-      .nav-links a:hover { background: var(--gold-light); color: var(--gold-dark); }
+      .nav-links a::after {
+        content: ''; position: absolute; bottom: 0; left: 0;
+        width: 0; height: 2px;
+        background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        border-radius: 1px;
+      }
+      .nav-links a:hover { color: var(--gold-dark); }
+      .nav-links a:hover::after { width: 100%; }
+      .nav-links a.active { color: var(--gold-dark); font-weight: 600; }
+      .nav-links a.active::after { width: 100%; }
       .nav-cta {
         background: linear-gradient(135deg, var(--gold), var(--gold-dark));
         color: var(--text-on-gold) !important;
@@ -303,7 +315,7 @@ const { title, description } = Astro.props;
         .logo-icon { width: 28px; height: 28px; font-size: 0.85rem; }
         .logo-sub { font-size: 0.55rem; }
         .nav-links { order: 3; width: 100%; justify-content: center; gap: 0.1rem; }
-        .nav-links a { font-size: 0.75rem; padding: 0.3rem 0.5rem; }
+        .nav-links a { font-size: 0.75rem; padding: 0.3rem 0.25rem; }
         .nav-cta { font-size: 0.75rem; padding: 0.35rem 0.75rem; }
         .top-bar .container { justify-content: center; text-align: center; flex-direction: column; gap: 0.15rem; }
         .top-bar { font-size: 0.65rem; padding: 0.35rem 0; }
@@ -359,10 +371,10 @@ const { title, description } = Astro.props;
             </span>
           </a>
           <div class="nav-links">
-            <a href="/">Home</a>
-            <a href="/services">Services</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="/" class={path === '/' ? 'active' : ''}>Home</a>
+            <a href="/services" class={path === '/services' ? 'active' : ''}>Services</a>
+            <a href="/about" class={path === '/about' ? 'active' : ''}>About</a>
+            <a href="/contact" class={path === '/contact' ? 'active' : ''}>Contact</a>
             <a href="/book" class="nav-cta btn-gold-pulse">Book Now</a>
           </div>
         </nav>
