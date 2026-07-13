@@ -182,7 +182,7 @@ const { title, description } = Astro.props;
         max-width: 560px; margin: 0 auto;
       }
       .hero-grid {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+        display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: center;
       }
       .hero-section {
         background: var(--gold-tint); padding: 5rem 0;
@@ -339,8 +339,8 @@ const { title, description } = Astro.props;
     <style is:inline>
       @media (max-width: 768px) {
         .hero-section { padding: 2rem 0 !important; }
-        .hero-grid { grid-template-columns: 1fr !important; gap: 1rem !important; }
-        .hero-grid .hero-image { min-height: 160px !important; max-height: 200px !important; order: -1 !important; }
+        .hero-grid { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+        .hero-grid .hero-image { min-height: 140px !important; max-height: 180px !important; order: -1 !important; }
         .hero-grid .badge { margin-bottom: 0.5rem !important; font-size: 0.72rem !important; }
         .hero-grid p { font-size: 0.9rem !important; margin-bottom: 1rem !important; }
         .hero-ctas { flex-direction: column !important; gap: 0.5rem !important; }
