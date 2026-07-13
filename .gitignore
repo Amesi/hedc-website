@@ -3,3 +3,7 @@ dist/
 .env
 .DS_Store
 *.local
+
+# Secret tokens
+.gh_token
+.cf_token
