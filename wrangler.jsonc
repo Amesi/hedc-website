@@ -4,5 +4,12 @@
   "compatibility_date": "2026-07-13",
   "assets": {
     "directory": "dist"
-  }
+  },
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "hedc.kumi-tech.com",
+      "custom_domain": true
+    }
+  ]
 }
