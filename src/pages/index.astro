@@ -4,13 +4,14 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Home — Hope Essence Dental Clinic, Port Moresby">
   <!-- Hero -->
-  <section style="background: var(--gold-tint); padding: 5rem 0 4rem;">
-    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+  <section style="background: var(--gold-tint); padding: 5rem 0;">
+    <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
       <div>
-        <h1 class="serif" style="font-size: 3.5rem; font-weight: 400; line-height: 1.1; margin-bottom: 1.25rem; color: var(--text);">
+        <span class="badge" style="margin-bottom: 1.5rem; display: inline-block;">Proudly 100% PNG Owned 🇵🇬</span>
+        <h1 class="heading-xl" style="margin-bottom: 1.25rem;">
           Your smile,<br />our passion.
         </h1>
-        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 450px;">
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.25rem; max-width: 440px; line-height: 1.7;">
           Quality affordable dental care for the whole family. From routine check-ups to advanced restorations — we treat every patient like family.
         </p>
         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
@@ -18,35 +19,35 @@ import Layout from '../layouts/Layout.astro';
           <a href="/services" class="btn btn-outline">Our Services</a>
         </div>
       </div>
-      <div class="img-placeholder" style="min-height: 350px; border-radius: var(--radius);">
+      <div class="img-placeholder" style="min-height: 380px; border-radius: var(--radius-lg); box-shadow: var(--shadow-gold-lg);">
         [ DENTIST & PATIENT PHOTO ]
       </div>
     </div>
   </section>
 
   <!-- Trust strip -->
-  <section style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+  <section style="padding: 2.5rem 0; border-bottom: 1px solid var(--border-light);">
     <div class="container">
-      <div class="grid-4" style="text-align: center; gap: 1rem;">
+      <div class="grid-5" style="text-align: center; gap: 0.75rem;">
         <div>
-          <strong class="serif" style="font-size: 1.5rem; color: var(--gold-dark);">10+</strong>
-          <br /><span style="font-size: 0.82rem; color: var(--text-muted);">Years Experience</span>
+          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10+</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Years Experience</div>
         </div>
         <div>
-          <strong class="serif" style="font-size: 1.5rem; color: var(--gold-dark);">10</strong>
-          <br /><span style="font-size: 0.82rem; color: var(--text-muted);">Dental Services</span>
+          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Dental Services</div>
         </div>
         <div>
-          <strong class="serif" style="font-size: 1.5rem; color: var(--gold-dark);">5.0</strong>
-          <br /><span style="font-size: 0.82rem; color: var(--text-muted);">★ ★ ★ ★ ★ Rating</span>
+          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">5.0</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">★ ★ ★ ★ ★ Rating</div>
         </div>
         <div>
-          <strong class="serif" style="font-size: 1.5rem; color: var(--gold-dark);">100%</strong>
-          <br /><span style="font-size: 0.82rem; color: var(--text-muted);">PNG Owned</span>
+          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">100%</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">PNG Owned</div>
         </div>
         <div>
-          <strong class="serif" style="font-size: 1.5rem; color: var(--gold-dark);">Mon–Sat</strong>
-          <br /><span style="font-size: 0.82rem; color: var(--text-muted);">Open 6 Days</span>
+          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">Mon–Sat</div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Open 6 Days</div>
         </div>
       </div>
     </div>
@@ -55,44 +56,45 @@ import Layout from '../layouts/Layout.astro';
   <!-- Services preview -->
   <section class="section">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 2.5rem;">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge" style="margin-bottom: 0.75rem;">What We Offer</span>
         <h2 class="section-title">Our Services</h2>
         <p class="section-subtitle">Comprehensive dental care for every stage of life.</p>
       </div>
       <div class="grid-3">
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M12 2C5 2 2 7 2 12c0 5 3 10 10 10s10-5 10-10C22 7 19 2 12 2z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v8M8 12h8" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">General Check-up</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Comprehensive oral examination to keep your smile healthy.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 8v8M8 12h8" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">General Check-up</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Comprehensive oral examination to keep your smile healthy.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M3 12h18M12 3v18" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Teeth Cleaning</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Professional scale and polish for a cleaner, healthier smile.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor"/><path d="M3 12h18M12 3v18" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Teeth Cleaning</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Professional scale and polish for a cleaner, healthier smile.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M12 2l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2 4-8z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Crowns & Bridges</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Restore damaged teeth with quality crowns and bridgework.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><path d="M12 2l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2 4-8z" fill="none" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Crowns & Bridges</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Restore damaged teeth with quality crowns and bridgework.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Root Canal Therapy</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Save infected teeth with professional root canal treatment.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 2v20M2 12h20" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Root Canal Therapy</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Save infected teeth with professional treatment.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M12 3l2 6 6 2-5 4 2 7-5-3-5 3 2-7-5-4 6-2 2-6z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Teeth Whitening</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Professional whitening for a brighter, more confident smile.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><path d="M12 3l2 6 6 2-5 4 2 7-5-3-5 3 2-7-5-4 6-2 2-6z" fill="none" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Teeth Whitening</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Professional whitening for a brighter, confident smile.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 36px; height: 36px; margin: 0 auto 1rem;"><path d="M4 4h16v16H4V4z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Buai Stain Removal</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted);">Deep cleaning to remove betel nut stains and restore your natural smile.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor"/><path d="M8 12h8M12 8v8" stroke="currentColor"/></svg>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Buai Stain Removal</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Deep cleaning to remove betel nut stains and restore your smile.</p>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/services" class="btn btn-outline">View All 10 Services →</a>
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="/services" class="btn btn-gold">View All 10 Services →</a>
       </div>
     </div>
   </section>
@@ -100,36 +102,37 @@ import Layout from '../layouts/Layout.astro';
   <!-- Why Hope Essence -->
   <section class="section section-alt">
     <div class="container">
-      <div style="text-align: center; margin-bottom: 2.5rem;">
-        <h2 class="section-title">Why Hope Essence?</h2>
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="badge" style="margin-bottom: 0.75rem;">Why Choose Us</span>
+        <h2 class="section-title">Hope Essence Difference</h2>
       </div>
       <div class="grid-2">
-        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">🏆</div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+          <div style="background: var(--gold-light); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem;">🏆</div>
           <div>
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Affordable Excellence</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Quality dental care at prices that won't break the bank. We believe everyone deserves a healthy smile.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text);">Affordable Excellence</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">Quality dental care at prices that won't break the bank. We believe everyone deserves a healthy smile.</p>
           </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">👨‍⚕️</div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+          <div style="background: var(--gold-light); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem;">👨‍⚕️</div>
           <div>
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Experienced Team</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Our dentists bring years of experience in general and cosmetic dentistry, using modern techniques.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text);">Experienced Team</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">Our dentists bring years of experience in general and cosmetic dentistry, using modern techniques.</p>
           </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">📍</div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+          <div style="background: var(--gold-light); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem;">📍</div>
           <div>
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Convenient Location</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">Located in Hohola, Port Moresby — easy to find, with parking. Open six days a week.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text);">Convenient Location</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">Located in Hohola, Port Moresby — easy to find with parking. Open six days a week.</p>
           </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
-          <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">🤝</div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+          <div style="background: var(--gold-light); border-radius: 50%; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem;">🤝</div>
           <div>
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Family-Friendly</h3>
-            <p style="font-size: 0.88rem; color: var(--text-muted);">We treat patients of all ages — from children's first check-ups to senior dental care.</p>
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text);">Family-Friendly</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">We treat patients of all ages — from children's first check-ups to senior dental care.</p>
           </div>
         </div>
       </div>
@@ -137,13 +140,14 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA Band -->
-  <section style="background: var(--topbar-footer); color: white; padding: 3.5rem 0; text-align: center;">
+  <section class="section section-dark" style="text-align: center;">
     <div class="container" style="max-width: 600px;">
-      <h2 class="serif" style="font-size: 2rem; font-weight: 400; margin-bottom: 0.75rem;">Ready for a healthier smile?</h2>
-      <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Book your appointment today — it's quick and easy.</p>
+      <span class="badge" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Get Started</span>
+      <h2 class="section-title" style="font-size: 2.2rem;">Ready for a healthier smile?</h2>
+      <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem; font-size: 1.05rem;">Book your appointment today — it's quick and easy.</p>
       <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
         <a href="/book" class="btn btn-gold" style="font-size: 1.05rem;">📅 Book Now</a>
-        <a href="tel:+67578352045" class="btn btn-ghost" style="color: white; border-color: rgba(255,255,255,0.3);">📞 Call +675 7835 2045</a>
+        <a href="tel:+67578352045" class="btn btn-ghost">📞 Call +675 7835 2045</a>
       </div>
     </div>
   </section>

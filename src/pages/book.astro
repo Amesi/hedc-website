@@ -3,59 +3,76 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Book an Appointment — Hope Essence Dental Clinic">
-  <section style="background: var(--gold-tint); padding: 4rem 0 3rem;">
+  <section style="background: var(--gold-tint); padding: 4rem 0 3.5rem;">
     <div class="container" style="text-align: center;">
-      <h1 class="section-title" style="font-size: 3rem;">Book Your Appointment</h1>
-      <p class="section-subtitle" style="max-width: 450px;">Choose the method that works best for you.</p>
+      <span class="badge" style="margin-bottom: 0.75rem;">Book Now</span>
+      <h1 class="heading-xl" style="font-size: 3rem;">Book Your Appointment</h1>
+      <p class="section-subtitle" style="max-width: 420px;">Choose the method that works best for you.</p>
     </div>
   </section>
 
   <section class="section">
-    <div class="container" style="max-width: 900px;">
+    <div class="container" style="max-width: 920px;">
       <div class="grid-3">
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">💬</div>
-          <h3 style="font-weight: 600; margin-bottom: 0.5rem;">WhatsApp</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">💬</div>
+          <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">WhatsApp</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
           <a href="https://wa.me/67578352045" target="_blank" class="btn btn-whatsapp" style="width: 100%; justify-content: center;">Book via WhatsApp →</a>
-          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Recommended — fastest way to book</p>
+          <p style="margin-top: 0.75rem; font-size: 0.78rem; color: var(--text-muted);">Recommended — fastest way to book</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📞</div>
-          <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Call Us</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Speak directly with our reception team during opening hours.</p>
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📞</div>
+          <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Call Us</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6;">Speak directly with our reception team during opening hours.</p>
           <a href="tel:+67578352045" class="btn btn-gold" style="width: 100%; justify-content: center;">Call +675 7835 2045</a>
-          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Also: +675 7189 4912</p>
+          <p style="margin-top: 0.75rem; font-size: 0.78rem; color: var(--text-muted);">Also: +675 7189 4912</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📍</div>
-          <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Walk In</h3>
-          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Visit our clinic in Hohola. Walk-ins welcome, no appointment needed.</p>
-          <div style="background: var(--surface-alt); border-radius: 8px; padding: 1rem; font-size: 0.88rem;">
-            <strong>GB Haus, Office 17</strong><br />Kunai Street, Hohola<br />Port Moresby
+        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">📍</div>
+          <h3 style="font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Walk In</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem; line-height: 1.6;">Visit our clinic in Hohola. Walk-ins welcome, no appointment needed.</p>
+          <div style="background: var(--surface-alt); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.88rem;">
+            <strong style="color: var(--text);">GB Haus, Office 17</strong><br />
+            <span style="color: var(--text-muted);">Kunai Street, Hohola<br />Port Moresby</span>
           </div>
-          <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Mon–Fri 8am–5pm · Sat 8am–1pm</p>
+          <p style="margin-top: 0.75rem; font-size: 0.78rem; color: var(--text-muted);">Mon–Fri 8am–5pm · Sat 8am–1pm</p>
         </div>
       </div>
 
       <!-- What to Expect -->
-      <h2 class="section-title" style="text-align: center; margin-top: 3rem;">What to Expect</h2>
-      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem;">
-        <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</span>
-          <div><strong>Arrival & Registration</strong><br /><span style="font-size: 0.88rem; color: var(--text-muted);">Arrive 10 minutes early. Bring your ID and any referral letters.</span></div>
+      <div style="text-align: center; margin: 3.5rem 0 2rem;">
+        <span class="badge" style="margin-bottom: 0.75rem;">Your Visit</span>
+        <h2 class="section-title">What to Expect</h2>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: center; padding: 1.25rem 1.75rem;">
+          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.9rem;">1</span>
+          <div>
+            <strong style="color: var(--text);">Arrival & Registration</strong>
+            <br /><span style="font-size: 0.88rem; color: var(--text-muted);">Arrive 10 minutes early. Bring your ID and any referral letters.</span>
+          </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</span>
-          <div><strong>Consultation</strong><br /><span style="font-size: 0.88rem; color: var(--text-muted);">Your dentist will examine your teeth and discuss your needs.</span></div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: center; padding: 1.25rem 1.75rem;">
+          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.9rem;">2</span>
+          <div>
+            <strong style="color: var(--text);">Consultation</strong>
+            <br /><span style="font-size: 0.88rem; color: var(--text-muted);">Your dentist will examine your teeth and discuss your needs.</span>
+          </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</span>
-          <div><strong>Treatment Plan</strong><br /><span style="font-size: 0.88rem; color: var(--text-muted);">We'll explain your options, costs, and timeline — no surprises.</span></div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: center; padding: 1.25rem 1.75rem;">
+          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.9rem;">3</span>
+          <div>
+            <strong style="color: var(--text);">Treatment Plan</strong>
+            <br /><span style="font-size: 0.88rem; color: var(--text-muted);">We'll explain your options, costs, and timeline — no surprises.</span>
+          </div>
         </div>
-        <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</span>
-          <div><strong>Treatment & Follow-up</strong><br /><span style="font-size: 0.88rem; color: var(--text-muted);">Receive your treatment and schedule any follow-up appointments needed.</span></div>
+        <div class="card" style="display: flex; gap: 1.25rem; align-items: center; padding: 1.25rem 1.75rem;">
+          <span style="background: var(--gold); color: var(--text-on-gold); width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; flex-shrink: 0; font-size: 0.9rem;">4</span>
+          <div>
+            <strong style="color: var(--text);">Treatment & Follow-up</strong>
+            <br /><span style="font-size: 0.88rem; color: var(--text-muted);">Receive your treatment and schedule any follow-up appointments needed.</span>
+          </div>
         </div>
       </div>
     </div>

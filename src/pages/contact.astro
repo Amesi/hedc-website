@@ -3,10 +3,11 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Contact Us — Hope Essence Dental Clinic">
-  <section style="background: var(--gold-tint); padding: 4rem 0 3rem;">
+  <section style="background: var(--gold-tint); padding: 4rem 0 3.5rem;">
     <div class="container" style="text-align: center;">
-      <h1 class="section-title" style="font-size: 3rem;">Get in Touch</h1>
-      <p class="section-subtitle" style="max-width: 450px;">We're here to help. Call, WhatsApp, or visit us.</p>
+      <span class="badge" style="margin-bottom: 0.75rem;">Get in Touch</span>
+      <h1 class="heading-xl" style="font-size: 3rem;">Contact Us</h1>
+      <p class="section-subtitle" style="max-width: 420px;">We're here to help. Call, email, or visit us.</p>
     </div>
   </section>
 
@@ -14,36 +15,48 @@ import Layout from '../layouts/Layout.astro';
     <div class="container">
       <div class="grid-2">
         <div>
-          <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📞 Phone</h3>
-            <p><a href="tel:+67578352045">+675 7835 2045</a></p>
-            <p><a href="tel:+67571894912">+675 7189 4912</a></p>
-            <p><a href="tel:+67572928301">+675 7292 8301</a></p>
+          <div class="card" style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="background: var(--gold-light); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">📞</div>
+            <div>
+              <h3 style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem;">Phone</h3>
+              <p style="font-size: 0.9rem;"><a href="tel:+67578352045">+675 7835 2045</a></p>
+              <p style="font-size: 0.9rem;"><a href="tel:+67571894912">+675 7189 4912</a></p>
+              <p style="font-size: 0.9rem;"><a href="tel:+67572928301">+675 7292 8301</a></p>
+            </div>
           </div>
-          <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📧 Email</h3>
-            <p><a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a></p>
+          <div class="card" style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="background: var(--gold-light); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">📧</div>
+            <div>
+              <h3 style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem;">Email</h3>
+              <p style="font-size: 0.9rem;"><a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a></p>
+            </div>
           </div>
-          <div class="card" style="margin-bottom: 1rem;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📍 Location</h3>
-            <p>GB Haus, Office 17, Kunai Street</p>
-            <p>Section 5, Lot 225, Hohola</p>
-            <p>Port Moresby, NCD, Papua New Guinea</p>
+          <div class="card" style="margin-bottom: 1rem; display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="background: var(--gold-light); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">📍</div>
+            <div>
+              <h3 style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem;">Location</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">GB Haus, Office 17, Kunai Street</p>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">Section 5, Lot 225, Hohola</p>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">Port Moresby, NCD, Papua New Guinea</p>
+            </div>
           </div>
-          <div class="card">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">🕐 Opening Hours</h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem; font-size: .9rem;">
-              <span>Monday – Friday</span><span style="text-align: right; font-weight: 500;">8:00 AM – 5:00 PM</span>
-              <span>Saturday</span><span style="text-align: right; font-weight: 500;">8:00 AM – 1:00 PM</span>
-              <span>Sunday</span><span style="text-align: right; color: var(--text-muted);">Closed</span>
+          <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+            <div style="background: var(--gold-light); border-radius: 50%; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.1rem;">🕐</div>
+            <div>
+              <h3 style="font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem;">Opening Hours</h3>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem; font-size: 0.88rem;">
+                <span style="color: var(--text-muted);">Mon–Fri</span><span style="text-align: right; font-weight: 500; color: var(--text);">8:00 AM – 5:00 PM</span>
+                <span style="color: var(--text-muted);">Saturday</span><span style="text-align: right; font-weight: 500; color: var(--text);">8:00 AM – 1:00 PM</span>
+                <span style="color: var(--text-muted);">Sunday</span><span style="text-align: right; color: var(--text-muted);">Closed</span>
+              </div>
             </div>
           </div>
         </div>
         <div>
-          <div class="img-placeholder" style="min-height: 300px; margin-bottom: 1rem;">[ MAP ]</div>
-          <div class="card" style="background: var(--gold-light); border-color: var(--gold); text-align: center; padding: 2rem;">
-            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">💬 Book via WhatsApp</h3>
-            <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 1rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
+          <div class="img-placeholder" style="min-height: 320px; margin-bottom: 1.25rem; border-radius: var(--radius-lg);">[ MAP ]</div>
+          <div class="card" style="background: var(--gold-light); border: 1px solid var(--gold); text-align: center; padding: 2.25rem;">
+            <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">💬 Book via WhatsApp</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
             <a href="https://wa.me/67578352045" target="_blank" class="btn btn-whatsapp">WhatsApp +675 7835 2045</a>
           </div>
         </div>
@@ -52,12 +65,11 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <section class="section section-alt" style="text-align: center;">
-    <div class="container" style="max-width: 600px;">
-      <h2 class="section-title">Emergency Dental Care</h2>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
-        Toothache? Broken tooth? We handle dental emergencies. Walk-ins welcome during opening hours.
-      </p>
-      <a href="tel:+67578352045" class="btn btn-gold" style="font-size: 1.1rem;">📞 Call Now: +675 7835 2045</a>
+    <div class="container" style="max-width: 560px;">
+      <span class="badge" style="margin-bottom: 0.75rem;">Emergency?</span>
+      <h2 class="section-title" style="font-size: 2rem;">Emergency Dental Care</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.75rem;">Toothache? Broken tooth? We handle dental emergencies. Walk-ins welcome during opening hours.</p>
+      <a href="tel:+67578352045" class="btn btn-gold" style="font-size: 1.05rem;">📞 Call Now: +675 7835 2045</a>
     </div>
   </section>
 </Layout>

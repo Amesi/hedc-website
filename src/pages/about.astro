@@ -3,58 +3,66 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="About Us — Hope Essence Dental Clinic">
-  <section style="background: var(--gold-tint); padding: 4rem 0 3rem;">
+  <section style="background: var(--gold-tint); padding: 4rem 0 3.5rem;">
     <div class="container" style="text-align: center;">
-      <h1 class="section-title" style="font-size: 3rem;">About Our Clinic</h1>
+      <span class="badge" style="margin-bottom: 0.75rem;">Our Story</span>
+      <h1 class="heading-xl" style="font-size: 3rem;">About Our Clinic</h1>
     </div>
   </section>
 
   <section class="section">
-    <div class="container" style="max-width: 800px;">
-      <h2 class="section-title" style="text-align: center;">Our Story</h2>
-      <p style="margin-bottom: 1.5rem; line-height: 1.8;">Hope Essence Dental Clinic was founded with a simple mission: to provide <strong>quality, affordable dental care</strong> to the people of Port Moresby and beyond. As a 100% PNG-owned and operated clinic, we understand the unique oral health challenges our community faces — from betel nut staining to limited access to specialist care.</p>
-      <p style="margin-bottom: 2rem; line-height: 1.8;">Located in Hohola, Port Moresby, our modern clinic is equipped to handle everything from routine check-ups and cleaning to advanced procedures like root canal therapy, crowns, bridges, and implant consultations. We believe every Papua New Guinean deserves a healthy, confident smile.</p>
+    <div class="container" style="max-width: 780px;">
+      <div class="card" style="padding: 2.5rem; margin-bottom: 2.5rem; border-left: 3px solid var(--gold);">
+        <p style="margin-bottom: 1.5rem; line-height: 1.8; font-size: 1rem;">Hope Essence Dental Clinic was founded with a simple mission: to provide <strong>quality, affordable dental care</strong> to the people of Port Moresby and beyond. As a 100% PNG-owned and operated clinic, we understand the unique oral health challenges our community faces — from betel nut staining to limited access to specialist care.</p>
+        <p style="line-height: 1.8; font-size: 1rem;">Located in Hohola, our modern clinic is equipped to handle everything from routine check-ups to advanced procedures like root canal therapy, crowns, bridges, and implant consultations. We believe every Papua New Guinean deserves a healthy, confident smile.</p>
+      </div>
 
-      <div class="img-placeholder" style="min-height: 250px; margin-bottom: 2.5rem;">[ TEAM PHOTO ]</div>
+      <div class="img-placeholder" style="min-height: 280px; margin-bottom: 3rem; border-radius: var(--radius-lg);">[ TEAM PHOTO ]</div>
 
-      <h2 class="section-title" style="text-align: center;">Meet Our Team</h2>
-      <div class="grid-3" style="margin-top: 1.5rem;">
-        <div class="card" style="text-align: center;">
-          <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
-          <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. Ben Kila</h3>
-          <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Principal Dentist</p>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Years of experience in general and cosmetic dentistry.</p>
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <span class="badge" style="margin-bottom: 0.75rem;">Meet the Team</span>
+        <h2 class="section-title">Your Dentists</h2>
+      </div>
+      <div class="grid-3" style="margin-bottom: 3rem;">
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <div class="img-placeholder" style="width: 110px; height: 110px; border-radius: 50%; min-height: 0; margin: 0 auto 1.25rem;">[ PHOTO ]</div>
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text);">Dr. Ben Kila</h3>
+          <p style="color: var(--gold-dark); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem;">Principal Dentist</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Years of experience in general and cosmetic dentistry.</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
-          <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. Mary Waide</h3>
-          <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Dentist</p>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Passionate about preventive care and patient education.</p>
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <div class="img-placeholder" style="width: 110px; height: 110px; border-radius: 50%; min-height: 0; margin: 0 auto 1.25rem;">[ PHOTO ]</div>
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text);">Dr. Mary Waide</h3>
+          <p style="color: var(--gold-dark); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem;">Dentist</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Passionate about preventive care and patient education.</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
-          <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. James Kuman</h3>
-          <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Dental Surgeon</p>
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Specialist in oral surgery and complex dental procedures.</p>
+        <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+          <div class="img-placeholder" style="width: 110px; height: 110px; border-radius: 50%; min-height: 0; margin: 0 auto 1.25rem;">[ PHOTO ]</div>
+          <h3 style="font-size: 1.05rem; font-weight: 600; color: var(--text);">Dr. James Kuman</h3>
+          <p style="color: var(--gold-dark); font-size: 0.85rem; font-weight: 500; margin-bottom: 0.5rem;">Dental Surgeon</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">Specialist in oral surgery and complex dental procedures.</p>
         </div>
       </div>
 
-      <h2 class="section-title" style="text-align: center; margin-top: 3rem;">Our Values</h2>
-      <div class="grid-3" style="margin-top: 1.5rem;">
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">❤️</div>
-          <h3 style="font-size: 1rem; font-weight: 600;">Compassion</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Every patient deserves to be treated with care, respect, and understanding.</p>
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge" style="margin-bottom: 0.75rem;">Our Values</span>
+        <h2 class="section-title">What Drives Us</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">❤️</div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Compassion</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">Every patient deserves to be treated with care, respect, and understanding.</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤝</div>
-          <h3 style="font-size: 1rem; font-weight: 600;">Honesty</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Transparent recommendations and pricing — no surprises, no upselling.</p>
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Honesty</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">Transparent recommendations and pricing — no surprises, no upselling.</p>
         </div>
-        <div class="card" style="text-align: center;">
-          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌏</div>
-          <h3 style="font-size: 1rem; font-weight: 600;">Community</h3>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">Proudly serving PNG families with accessible, quality dental care.</p>
+        <div class="card" style="text-align: center; padding: 2rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 1rem;">🌏</div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Community</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.7;">Proudly serving PNG families with accessible, quality dental care.</p>
         </div>
       </div>
     </div>
