@@ -1,0 +1,185 @@
+---
+// Layout — wraps all pages with header, footer, and SEO meta
+export interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description || "Hope Essence Dental Clinic — Quality affordable dental care in Port Moresby, Papua New Guinea"} />
+    <title>{title} | Hope Essence Dental Clinic</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+      :root {
+        --primary: #0a7e8c;
+        --primary-light: #e0f5f8;
+        --primary-dark: #065a63;
+        --accent: #f4a261;
+        --accent-light: #fef3e7;
+        --text: #1a1a2e;
+        --text-light: #6b7280;
+        --bg: #ffffff;
+        --bg-alt: #f8fafc;
+        --border: #e5e7eb;
+        --radius: 12px;
+        --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+        --shadow-lg: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-serif: 'Playfair Display', Georgia, serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-sans);
+        color: var(--text);
+        background: var(--bg);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: var(--primary); text-decoration: none; }
+      a:hover { color: var(--primary-dark); }
+      img { max-width: 100%; height: auto; }
+      .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+      /* Header */
+      header {
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        position: sticky; top: 0; z-index: 100;
+        backdrop-filter: blur(8px);
+      }
+      nav {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 1rem 0; gap: 1rem;
+      }
+      .logo {
+        display: flex; align-items: center; gap: 0.75rem;
+        font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700;
+        color: var(--primary); white-space: nowrap;
+      }
+      .logo-icon { font-size: 1.8rem; }
+      .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+      .nav-links a {
+        padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
+        color: var(--text); transition: all .15s;
+      }
+      .nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: var(--primary); }
+      .nav-cta {
+        background: var(--primary); color: white !important; padding: 0.5rem 1.25rem;
+        border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+      }
+      .nav-cta:hover { background: var(--primary-dark) !important; }
+
+      /* Footer */
+      footer {
+        background: #1a1a2e; color: #cbd5e1; padding: 3rem 0 2rem; margin-top: 4rem;
+      }
+      footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+      footer h4 { color: white; font-size: 1rem; margin-bottom: 1rem; }
+      footer p, footer a { font-size: 0.88rem; color: #94a3b8; line-height: 1.8; }
+      footer a:hover { color: white; }
+      .footer-bottom { border-top: 1px solid #334155; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; color: #64748b; }
+      .footer-bottom .container { display: block; }
+
+      @media (max-width: 768px) {
+        footer .container { grid-template-columns: 1fr; }
+        nav { flex-wrap: wrap; }
+        .nav-links { order: 3; width: 100%; justify-content: center; }
+      }
+
+      /* Utility */
+      .btn {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
+        font-size: 0.95rem; border: none; cursor: pointer; transition: all .15s;
+      }
+      .btn-primary { background: var(--primary); color: white; }
+      .btn-primary:hover { background: var(--primary-dark); color: white; }
+      .btn-accent { background: var(--accent); color: white; }
+      .btn-accent:hover { background: #e08c3a; }
+      .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+      .btn-outline:hover { background: var(--primary-light); }
+      .text-center { text-align: center; }
+      .section { padding: 4rem 0; }
+      .section-title { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.75rem; color: var(--text); }
+      .section-subtitle { color: var(--text-light); font-size: 1.05rem; max-width: 600px; }
+      .card {
+        background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 1.5rem; transition: all .2s;
+      }
+      .card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); }
+      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
+      .badge {
+        display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px;
+        font-size: 0.8rem; font-weight: 500; background: var(--primary-light); color: var(--primary);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="logo">
+            <span class="logo-icon">🦷</span>
+            <span>Hope Essence Dental</span>
+          </a>
+          <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/services">Services</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
+            <a href="/book" class="nav-cta">Book Now</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <div>
+          <h4>🦷 Hope Essence Dental Clinic</h4>
+          <p>Quality affordable dental care for all ages. Proudly 100% PNG-owned and operated in Port Moresby.</p>
+          <p style="margin-top: 0.75rem;">
+            📍 GB Haus, Office 17, Kunai Street<br />
+            Section 5, Lot 225, Hohola, Port Moresby
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <p><a href="/">Home</a></p>
+          <p><a href="/services">Services</a></p>
+          <p><a href="/about">About Us</a></p>
+          <p><a href="/contact">Contact</a></p>
+          <p><a href="/book">Book Appointment</a></p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>📞 +675 7835 2045</p>
+          <p>📞 +675 7189 4912</p>
+          <p>📧 hopeessencedentalclinic@gmail.com</p>
+          <p style="margin-top: 0.5rem;">🕐 Mon–Fri 8am–5pm</p>
+          <p>🕐 Sat 8am–1pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          &copy; {new Date().getFullYear()} Hope Essence Dental Clinic. All rights reserved. | Site by <a href="https://kumi-tech.com">Kumi Tech</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
