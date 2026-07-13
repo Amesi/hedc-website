@@ -184,6 +184,15 @@ const { title, description } = Astro.props;
       .hero-grid {
         display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
       }
+      .hero-section {
+        background: var(--gold-tint); padding: 5rem 0;
+      }
+      .hero-image {
+        min-height: 380px; border-radius: var(--radius-lg); box-shadow: var(--shadow-gold-lg);
+      }
+      .hero-ctas {
+        display: flex; gap: 0.75rem; flex-wrap: wrap;
+      }
       .section { padding: 5rem 0; }
       .section-alt { background: var(--surface-alt); }
       .section-dark { background: var(--surface-dark); color: rgba(255,255,255,0.85); }
@@ -257,10 +266,12 @@ const { title, description } = Astro.props;
         .heading-xl { font-size: 1.8rem; letter-spacing: -0.01em; }
         .heading-lg, .section-title { font-size: 1.5rem; }
         .hero-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
-        .hero-grid .img-placeholder { min-height: 160px !important; max-height: 200px !important; order: -1; }
+        .hero-grid .hero-image { min-height: 160px !important; max-height: 200px !important; order: -1; }
         .hero-grid .badge { margin-bottom: 0.75rem !important; font-size: 0.72rem; }
         .hero-grid p { font-size: 0.9rem !important; margin-bottom: 1.25rem !important; }
-        .hero-grid .btn { width: 100%; justify-content: center; }
+        .hero-ctas { flex-direction: column; gap: 0.5rem; }
+        .hero-ctas .btn { width: 100%; justify-content: center; }
+        .hero-section { padding: 2.5rem 0; }
         .section { padding: 2.5rem 0; }
         .section-title { margin-bottom: 0.5rem; }
         .section-subtitle { font-size: 0.9rem; max-width: 100%; }
@@ -287,10 +298,11 @@ const { title, description } = Astro.props;
       }
       @media (max-width: 400px) {
         .hero-grid { gap: 0.75rem !important; }
-        .hero-grid .img-placeholder { min-height: 120px !important; max-height: 150px !important; }
+        .hero-grid .hero-image { min-height: 120px !important; max-height: 150px !important; }
         .heading-xl { font-size: 1.5rem; }
         .heading-lg, .section-title { font-size: 1.3rem; }
         .container { padding: 0 0.75rem; }
+        .hero-section { padding: 1.5rem 0; }
         .section { padding: 1.75rem 0; }
         .nav-links a { font-size: 0.7rem; padding: 0.25rem 0.4rem; }
         .card h3 { font-size: 0.85rem !important; }
