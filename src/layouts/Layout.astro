@@ -454,7 +454,7 @@ const { title, description } = Astro.props;
 
         // Inject mobile CSS override after external stylesheets have loaded
         var ms = document.createElement('style');
-        ms.textContent = '@media (max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:.75rem!important}.hero-image{min-height:140px!important;max-height:180px!important;order:-1!important}.hero-section .badge{margin-bottom:.5rem!important;font-size:.72rem!important}.hero-section p{font-size:.9rem!important;margin-bottom:1rem!important}.hero-ctas{flex-direction:column!important;gap:.5rem!important}.hero-ctas .btn{width:100%!important;justify-content:center!important}.hero-section{padding:2rem 0!important}.heading-xl{font-size:1.8rem!important}.section{padding:2rem 0!important}}';
+        ms.textContent = '@media (max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:.75rem!important}.hero-image{min-height:140px!important;max-height:180px!important;order:-1!important}.hero-section .badge{margin-bottom:.5rem!important;font-size:.72rem!important}.hero-section p{font-size:.9rem!important;margin-bottom:1rem!important}.hero-ctas{flex-direction:column!important;gap:.5rem!important}.hero-ctas .btn{width:100%!important;justify-content:center!important}.hero-section{padding:2rem 0!important}.heading-xl{font-size:1.8rem!important}.section{padding:2rem 0!important}.container{padding:0 1.25rem!important}}';
         document.head.appendChild(ms);
       }
     })();
