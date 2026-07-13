@@ -144,6 +144,13 @@ const { title, description } = Astro.props;
         color: var(--text-on-gold); box-shadow: var(--shadow-gold);
       }
       .btn-gold:hover { background: linear-gradient(135deg, var(--gold-dark), var(--gold-deep)); transform: translateY(-1px); box-shadow: var(--shadow-gold-lg); }
+      .btn-gold-pulse {
+        animation: btnGlow 2.5s ease-in-out infinite;
+      }
+      @keyframes btnGlow {
+        0%, 100% { box-shadow: var(--shadow-gold); }
+        50% { box-shadow: 0 0 20px rgba(244, 190, 12, 0.4), 0 0 40px rgba(244, 190, 12, 0.15); }
+      }
       .btn-whatsapp { background: var(--whatsapp); color: white; }
       .btn-whatsapp:hover { background: #0d9452; color: white; transform: translateY(-1px); }
       .btn-outline {
@@ -162,20 +169,20 @@ const { title, description } = Astro.props;
       .text-center { text-align: center; }
       .text-muted { color: var(--text-muted); }
       .heading-xl {
-        font-family: var(--font-serif); font-size: 3.5rem; font-weight: 400;
-        line-height: 1.08; letter-spacing: -0.02em; color: var(--text);
+        font-family: var(--font-serif); font-size: 4rem; font-weight: 400;
+        line-height: 1.05; letter-spacing: -0.025em; color: var(--text);
       }
       .heading-lg {
-        font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;
-        line-height: 1.15; letter-spacing: -0.01em; color: var(--text);
+        font-family: var(--font-serif); font-size: 2.75rem; font-weight: 400;
+        line-height: 1.12; letter-spacing: -0.015em; color: var(--text);
       }
       .heading-md {
         font-family: var(--font-serif); font-size: 1.75rem; font-weight: 400;
         line-height: 1.25; color: var(--text);
       }
       .section-title {
-        font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;
-        line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 0.75rem; color: var(--text);
+        font-family: var(--font-serif); font-size: 2.75rem; font-weight: 400;
+        line-height: 1.12; letter-spacing: -0.015em; margin-bottom: 0.75rem; color: var(--text);
       }
       .section-subtitle {
         color: var(--text-muted); font-size: 1.05rem; font-weight: 400;
@@ -187,6 +194,9 @@ const { title, description } = Astro.props;
       .hero-section {
         background: var(--gold-tint); padding: 5rem 0;
       }
+      .hero-section .badge { margin-bottom: 1.5rem; display: inline-block; }
+      .hero-section h1 { margin-bottom: 1.25rem; }
+      .hero-section p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.25rem; max-width: 440px; line-height: 1.7; }
       .hero-image {
         min-height: 380px; border-radius: var(--radius-lg); box-shadow: var(--shadow-gold-lg);
       }
@@ -198,6 +208,18 @@ const { title, description } = Astro.props;
       .section-dark { background: var(--surface-dark); color: rgba(255,255,255,0.85); }
       .section-dark .section-title { color: white; }
       .section-dark .section-subtitle { color: rgba(255,255,255,0.6); }
+
+      /* ── Gold gradient section dividers ────────────── */
+      .section-divider { height: 3px; background: linear-gradient(90deg, transparent, var(--gold), var(--gold-dark), var(--gold), transparent); border: none; margin: 0; }
+
+      /* ── Card top border accent ────────────────────── */
+      .card-accent {
+        border-top: 3px solid transparent;
+        border-image: linear-gradient(90deg, var(--gold), var(--gold-dark)) 1;
+      }
+
+      /* ── Gold pull quote ───────────────────────────── */
+      .gold-quote { color: var(--gold-dark); font-family: var(--font-serif); font-weight: 600; }
 
       /* ── Cards ──────────────────────────────────────── */
       .card {
@@ -334,7 +356,7 @@ const { title, description } = Astro.props;
             <a href="/services">Services</a>
             <a href="/about">About</a>
             <a href="/contact">Contact</a>
-            <a href="/book" class="nav-cta">Book Now</a>
+            <a href="/book" class="nav-cta btn-gold-pulse">Book Now</a>
           </div>
         </nav>
       </div>
@@ -426,7 +448,7 @@ const { title, description } = Astro.props;
 
         // Inject mobile CSS override after external stylesheets have loaded
         var ms = document.createElement('style');
-        ms.textContent = '@media (max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:.75rem!important}.hero-grid .hero-image{min-height:140px!important;max-height:180px!important;order:-1!important}.hero-grid .badge{margin-bottom:.5rem!important;font-size:.72rem!important}.hero-grid p{font-size:.9rem!important;margin-bottom:1rem!important}.hero-ctas{flex-direction:column!important;gap:.5rem!important}.hero-ctas .btn{width:100%!important;justify-content:center!important}.hero-section{padding:2rem 0!important}.heading-xl{font-size:1.8rem!important}.section{padding:2rem 0!important}}';
+        ms.textContent = '@media (max-width:768px){.hero-grid{grid-template-columns:1fr!important;gap:.75rem!important}.hero-image{min-height:140px!important;max-height:180px!important;order:-1!important}.hero-section .badge{margin-bottom:.5rem!important;font-size:.72rem!important}.hero-section p{font-size:.9rem!important;margin-bottom:1rem!important}.hero-ctas{flex-direction:column!important;gap:.5rem!important}.hero-ctas .btn{width:100%!important;justify-content:center!important}.hero-section{padding:2rem 0!important}.heading-xl{font-size:1.8rem!important}.section{padding:2rem 0!important}}';
         document.head.appendChild(ms);
       }
     })();
