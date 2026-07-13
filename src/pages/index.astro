@@ -8,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="container hero-grid">
       <div>
         <span class="badge" style="margin-bottom: 1.5rem; display: inline-block;">Proudly 100% PNG Owned 🇵🇬</span>
-        <h1 class="heading-xl" style="margin-bottom: 1.25rem;">
+        <h1 class="heading-xl shimmer" style="margin-bottom: 1.25rem;">
           Your smile,<br />our passion.
         </h1>
         <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.25rem; max-width: 440px; line-height: 1.7;">
@@ -26,15 +26,15 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Trust strip -->
-  <section style="padding: 2.5rem 0; border-bottom: 1px solid var(--border-light);">
+  <section class="reveal" style="padding: 2.5rem 0; border-bottom: 1px solid var(--border-light);">
     <div class="container">
       <div class="grid-5" style="text-align: center; gap: 0.75rem;">
         <div>
-          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10+</div>
+          <div class="serif counter" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10+</div>
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Years Experience</div>
         </div>
         <div>
-          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10</div>
+          <div class="serif counter" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">10</div>
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">Dental Services</div>
         </div>
         <div>
@@ -42,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">★ ★ ★ ★ ★ Rating</div>
         </div>
         <div>
-          <div class="serif" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">100%</div>
+          <div class="serif counter" style="font-size: 1.5rem; font-weight: 600; color: var(--gold-dark); letter-spacing: -0.02em;">100%</div>
           <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.15rem;">PNG Owned</div>
         </div>
         <div>
@@ -54,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Services preview -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3rem;">
         <span class="badge" style="margin-bottom: 0.75rem;">What We Offer</span>
@@ -62,32 +62,32 @@ import Layout from '../layouts/Layout.astro';
         <p class="section-subtitle">Comprehensive dental care for every stage of life.</p>
       </div>
       <div class="grid-3">
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-1" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 8v8M8 12h8" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">General Check-up</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Comprehensive oral examination to keep your smile healthy.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-2" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor"/><path d="M3 12h18M12 3v18" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Teeth Cleaning</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Professional scale and polish for a cleaner, healthier smile.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-3" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><path d="M12 2l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2 4-8z" fill="none" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Crowns & Bridges</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Restore damaged teeth with quality crowns and bridgework.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-4" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 2v20M2 12h20" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Root Canal Therapy</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Save infected teeth with professional treatment.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-5" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><path d="M12 3l2 6 6 2-5 4 2 7-5-3-5 3 2-7-5-4 6-2 2-6z" fill="none" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Teeth Whitening</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Professional whitening for a brighter, confident smile.</p>
         </div>
-        <div class="card" style="text-align: center; padding: 2.5rem 1.75rem;">
+        <div class="card reveal reveal-delay-6" style="text-align: center; padding: 2.5rem 1.75rem;">
           <svg class="icon-gold" viewBox="0 0 24 24" style="width: 32px; height: 32px; margin: 0 auto 1.25rem;"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor"/><path d="M8 12h8M12 8v8" stroke="currentColor"/></svg>
           <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text);">Buai Stain Removal</h3>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Deep cleaning to remove betel nut stains and restore your smile.</p>
@@ -100,7 +100,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Why Hope Essence -->
-  <section class="section section-alt">
+  <section class="section section-alt reveal">
     <div class="container">
       <div style="text-align: center; margin-bottom: 3rem;">
         <span class="badge" style="margin-bottom: 0.75rem;">Why Choose Us</span>
@@ -140,7 +140,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- CTA Band -->
-  <section class="section section-dark" style="text-align: center;">
+  <section class="section section-dark reveal" style="text-align: center;">
     <div class="container" style="max-width: 600px;">
       <span class="badge" style="background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); margin-bottom: 1rem;">Get Started</span>
       <h2 class="section-title" style="font-size: 2.2rem;">Ready for a healthier smile?</h2>
