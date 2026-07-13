@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hope Essence Dental Clinic — Full Site Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --gold: #F4BE0C;
+      --gold-dark: #C99A06;
+      --gold-light: #faf3e0;
+      --gold-tint: #fdf8ec;
+      --text: #4a4a4a;
+      --text-muted: #7a7a7a;
+      --text-on-gold: #3a2f08;
+      --surface-alt: #f8f5ec;
+      --border: #ece6d8;
+      --dark: #333333;
+      --whatsapp: #1faf6f;
+      --bg: #ffffff;
+      --radius: 12px;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--text); text-decoration: none; }
+    a:hover { color: var(--gold-dark); }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .serif { font-family: var(--font-serif); }
+    .text-center { text-align: center; }
+    .section { padding: 4.5rem 0; }
+    .section-alt { background: var(--surface-alt); }
+    .section-title {
+      font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+    .grid-5 { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; }
+    .card {
+      background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.5rem; transition: all 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--gold); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem; border-radius: var(--radius); font-weight: 600;
+      font-size: 0.95rem; border: none; cursor: pointer; font-family: var(--font-sans);
+      transition: all 0.15s;
+    }
+    .btn-gold { background: var(--gold); color: var(--text-on-gold); }
+    .btn-gold:hover { background: var(--gold-dark); color: var(--text-on-gold); }
+    .btn-outline { background: white; color: var(--text); border: 2px solid var(--border); }
+    .btn-outline:hover { border-color: var(--gold); }
+    .btn-ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.3); }
+    .btn-ghost:hover { border-color: white; }
+    .btn-whatsapp { background: var(--whatsapp); color: white; }
+    .btn-whatsapp:hover { background: #0d9452; color: white; }
+
+    /* Top bar */
+    .top-bar { background: var(--dark); color: rgba(255,255,255,0.8); font-size: 0.8rem; padding: 0.4rem 0; }
+    .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .top-bar a { color: rgba(255,255,255,0.8); }
+    .top-bar a:hover { color: var(--gold); }
+    .top-bar .sep::before { content: "·"; margin: 0 0.5rem; opacity: 0.4; }
+
+    /* Nav */
+    header {
+      background: var(--bg); border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 0; gap: 1rem; }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; white-space: nowrap;
+    }
+    .logo-icon {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-weight: 700;
+      font-size: 1.2rem; color: var(--text-on-gold); flex-shrink: 0;
+    }
+    .logo-sub { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0.3px; display: block; margin-top: -2px; }
+    .nav-links { display: flex; gap: 0.25rem; flex-wrap: wrap; align-items: center; }
+    .nav-links a { padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500; color: var(--text); transition: all 0.15s; }
+    .nav-links a:hover { background: var(--gold-light); color: var(--gold-dark); }
+    .nav-cta { background: var(--gold); color: var(--text-on-gold) !important; padding: 0.5rem 1.25rem; border-radius: var(--radius); font-weight: 600; }
+    .nav-cta:hover { background: var(--gold-dark) !important; color: var(--text-on-gold) !important; }
+
+    /* Image placeholder */
+    .img-placeholder {
+      background: repeating-linear-gradient(-45deg, var(--border), var(--border) 2px, transparent 2px, transparent 8px);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.78rem; font-family: ui-monospace, monospace;
+      text-transform: uppercase; letter-spacing: 0.5px; min-height: 200px;
+    }
+    .price-badge {
+      display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
+      font-size: 0.82rem; font-weight: 600; background: var(--gold); color: var(--text-on-gold);
+    }
+    .icon-gold { stroke: var(--gold); stroke-width: 2; fill: none; width: 36px; height: 36px; }
+
+    /* Trust strip */
+    .trust-num { font-family: var(--font-serif); font-size: 1.5rem; color: var(--gold-dark); }
+    .trust-label { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* Footer */
+    footer { background: var(--dark); color: #cbd5e1; padding: 3rem 0 2rem; }
+    footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+    footer h4 { color: white; font-family: var(--font-serif); font-size: 1rem; margin-bottom: 1rem; }
+    footer p, footer a { font-size: 0.88rem; color: #94a3b8; line-height: 1.8; }
+    footer a:hover { color: var(--gold); }
+    .footer-logo {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--gold);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; color: var(--text-on-gold);
+      margin-bottom: 0.75rem;
+    }
+    .footer-bottom { border-top: 1px solid #4a4a4a; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; color: #64748b; }
+
+    @media (max-width: 768px) {
+      footer .container { grid-template-columns: 1fr; }
+      nav { flex-wrap: wrap; }
+      .nav-links { order: 3; width: 100%; justify-content: center; }
+      .section-title { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== TOP BAR ==================== -->
+<div class="top-bar">
+  <div class="container">
+    <span><a href="tel:+67578352045">📞 +675 7835 2045</a></span>
+    <span><span>Mon–Fri 8am–5pm</span><span class="sep"></span><span>Sat 8am–1pm</span></span>
+  </div>
+</div>
+
+<!-- ==================== HEADER ==================== -->
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo">
+        <span class="logo-icon">H</span>
+        <span>Hope Essence <span class="logo-sub">Dental Clinic</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#book" class="nav-cta">Book Now</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!--  HOME                                                         -->
+<!-- ============================================================ -->
+<section style="background: var(--gold-tint); padding: 5rem 0 4rem;">
+  <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+    <div>
+      <h1 class="serif" style="font-size: 3.5rem; font-weight: 400; line-height: 1.1; margin-bottom: 1.25rem;">
+        Your smile,<br>our passion.
+      </h1>
+      <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 450px;">
+        Quality affordable dental care for the whole family. From routine check-ups to advanced restorations — we treat every patient like family.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="#book" class="btn btn-gold">📅 Book Appointment</a>
+        <a href="#services" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+    <div class="img-placeholder" style="min-height: 350px;">[ DENTIST & PATIENT PHOTO ]</div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section style="padding: 2rem 0; border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="grid-5" style="text-align: center; gap: 1rem;">
+      <div><div class="trust-num">10+</div><div class="trust-label">Years Experience</div></div>
+      <div><div class="trust-num">10</div><div class="trust-label">Dental Services</div></div>
+      <div><div class="trust-num">5.0</div><div class="trust-label">★ ★ ★ ★ ★ Rating</div></div>
+      <div><div class="trust-num">100%</div><div class="trust-label">PNG Owned</div></div>
+      <div><div class="trust-num">Mon–Sat</div><div class="trust-label">Open 6 Days</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Services preview -->
+<section class="section" id="services">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive dental care for every stage of life.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 8v8M8 12h8" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">General Check-up</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Comprehensive oral examination to keep your smile healthy.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor"/><path d="M3 12h18M12 3v18" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Teeth Cleaning</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Professional scale and polish for a cleaner, healthier smile.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><path d="M12 2l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2 4-8z" fill="none" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Crowns & Bridges</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Restore damaged teeth with quality crowns and bridgework.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor"/><path d="M12 2v20M2 12h20" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Root Canal Therapy</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Save infected teeth with professional root canal treatment.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><path d="M12 3l2 6 6 2-5 4 2 7-5-3-5 3 2-7-5-4 6-2 2-6z" fill="none" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Teeth Whitening</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Professional whitening for a brighter, more confident smile.</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <svg class="icon-gold" viewBox="0 0 24 24" style="margin: 0 auto 1rem;"><rect x="4" y="4" width="16" height="16" rx="2" fill="none" stroke="currentColor"/><path d="M8 12h8M12 8v8" stroke="currentColor"/></svg>
+        <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">Buai Stain Removal</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">Deep cleaning to remove betel nut stains and restore your natural smile.</p>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="#services-full" class="btn btn-outline">View All 10 Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Hope Essence -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">Why Hope Essence?</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">🏆</div>
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Affordable Excellence</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Quality dental care at prices that won't break the bank. We believe everyone deserves a healthy smile.</p>
+        </div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">👨‍⚕️</div>
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Experienced Team</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Our dentists bring years of experience in general and cosmetic dentistry, using modern techniques.</p>
+        </div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">📍</div>
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Convenient Location</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">Located in Hohola, Port Moresby — easy to find, with parking. Open six days a week.</p>
+        </div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="background: var(--gold-light); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.2rem;">🤝</div>
+        <div>
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.35rem;">Family-Friendly</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted);">We treat patients of all ages — from children's first check-ups to senior dental care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Home CTA -->
+<section style="background: var(--dark); color: white; padding: 3.5rem 0; text-align: center;">
+  <div class="container" style="max-width: 600px;">
+    <h2 class="serif" style="font-size: 2rem; font-weight: 400; margin-bottom: 0.75rem;">Ready for a healthier smile?</h2>
+    <p style="color: rgba(255,255,255,0.7); margin-bottom: 1.5rem;">Book your appointment today — it's quick and easy.</p>
+    <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+      <a href="#book" class="btn btn-gold" style="font-size: 1.05rem;">📅 Book Now</a>
+      <a href="tel:+67578352045" class="btn btn-ghost">📞 Call +675 7835 2045</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  SERVICES (full)                                               -->
+<!-- ============================================================ -->
+<section class="section" id="services-full" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">All Services</h2>
+      <p class="section-subtitle">Transparent pricing, quality treatment.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🦷</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">General Check-up</h3><span class="price-badge">K150</span><span style="font-size:0.78rem;color:var(--text-muted);">30 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Comprehensive oral examination including visual inspection, gum assessment, and oral cancer screening.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">✨</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Teeth Cleaning</h3><span class="price-badge">K200</span><span style="font-size:0.78rem;color:var(--text-muted);">45 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Professional removal of plaque, tartar, and surface stains for a cleaner, healthier smile.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🛠️</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Tooth Filling</h3><span class="price-badge">K250</span><span style="font-size:0.78rem;color:var(--text-muted);">45 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Composite/white fillings to restore teeth damaged by cavities. Natural-looking results.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🔧</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Tooth Extraction</h3><span class="price-badge">K200</span><span style="font-size:0.78rem;color:var(--text-muted);">30 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Gentle, professional tooth removal when needed. We prioritise your comfort throughout.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🔬</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Root Canal Therapy</h3><span class="price-badge">K800</span><span style="font-size:0.78rem;color:var(--text-muted);">90 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Save an infected or damaged tooth with professional root canal treatment. Pain-free with modern anaesthesia.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🌟</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Teeth Whitening</h3><span class="price-badge">K500</span><span style="font-size:0.78rem;color:var(--text-muted);">60 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Professional whitening treatment for a noticeably brighter smile in just one session.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">💎</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Crown & Bridge</h3><span class="price-badge">K1,200</span><span style="font-size:0.78rem;color:var(--text-muted);">90 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Durable crowns and bridges to restore function and appearance of damaged or missing teeth.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🦷</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Implant Consultation</h3><span class="price-badge">K300</span><span style="font-size:0.78rem;color:var(--text-muted);">45 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Comprehensive assessment and treatment planning for dental implants.</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">🍃</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Buai Stain Removal</h3><span class="price-badge">K180</span><span style="font-size:0.78rem;color:var(--text-muted);">45 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Specialised deep cleaning to remove betel nut stains and restore your natural tooth colour. 🇵🇬 PNG favourite!</p></div>
+      </div>
+      <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+        <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">👶</div>
+        <div style="flex:1;"><div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.35rem;"><h3 style="font-size:1.05rem;font-weight:600;">Children's Dentistry</h3><span class="price-badge">K120</span><span style="font-size:0.78rem;color:var(--text-muted);">30 min</span></div><p style="font-size:0.88rem;color:var(--text-muted);">Gentle, fun dental check-ups for kids. Building healthy habits from an early age.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  ABOUT                                                        -->
+<!-- ============================================================ -->
+<section class="section section-alt" id="about">
+  <div class="container" style="max-width: 800px;">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">About Our Clinic</h2>
+    </div>
+    <p style="margin-bottom: 1.5rem; line-height: 1.8;">Hope Essence Dental Clinic was founded with a simple mission: to provide <strong>quality, affordable dental care</strong> to the people of Port Moresby and beyond. As a 100% PNG-owned and operated clinic, we understand the unique oral health challenges our community faces — from betel nut staining to limited access to specialist care.</p>
+    <p style="margin-bottom: 2rem; line-height: 1.8;">Located in Hohola, our modern clinic is equipped to handle everything from routine check-ups to advanced procedures like root canal therapy, crowns, bridges, and implant consultations. We believe every Papua New Guinean deserves a healthy, confident smile.</p>
+
+    <div class="img-placeholder" style="min-height: 250px; margin-bottom: 2.5rem;">[ TEAM PHOTO ]</div>
+
+    <h3 class="serif" style="font-size: 1.5rem; font-weight: 400; margin-bottom: 1.5rem; text-align: center;">Meet Our Team</h3>
+    <div class="grid-3">
+      <div class="card" style="text-align: center;">
+        <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
+        <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. Ben Kila</h3>
+        <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Principal Dentist</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Years of experience in general and cosmetic dentistry.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
+        <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. Mary Waide</h3>
+        <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Dentist</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Passionate about preventive care and patient education.</p>
+      </div>
+      <div class="card" style="text-align: center;">
+        <div class="img-placeholder" style="width: 120px; height: 120px; border-radius: 50%; min-height: 0; margin: 0 auto 1rem;">[ PHOTO ]</div>
+        <h3 style="font-size: 1.05rem; font-weight: 600;">Dr. James Kuman</h3>
+        <p style="color: var(--gold-dark); font-size: 0.88rem; font-weight: 500;">Dental Surgeon</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">Specialist in oral surgery and complex dental procedures.</p>
+      </div>
+    </div>
+
+    <h3 class="serif" style="font-size: 1.5rem; font-weight: 400; margin: 2.5rem 0 1.5rem; text-align: center;">Our Values</h3>
+    <div class="grid-3">
+      <div class="card" style="text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 0.5rem;">❤️</div><h3 style="font-size: 1rem; font-weight: 600;">Compassion</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Every patient deserves to be treated with care, respect, and understanding.</p></div>
+      <div class="card" style="text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🤝</div><h3 style="font-size: 1rem; font-weight: 600;">Honesty</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Transparent recommendations and pricing — no surprises, no upselling.</p></div>
+      <div class="card" style="text-align: center;"><div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🌏</div><h3 style="font-size: 1rem; font-weight: 600;">Community</h3><p style="font-size: 0.85rem; color: var(--text-muted);">Proudly serving PNG families with accessible, quality dental care.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  CONTACT                                                      -->
+<!-- ============================================================ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">We're here to help. Call, email, or visit us.</p>
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📞 Phone</h3>
+          <p><a href="tel:+67578352045">+675 7835 2045</a></p>
+          <p><a href="tel:+67571894912">+675 7189 4912</a></p>
+          <p><a href="tel:+67572928301">+675 7292 8301</a></p>
+        </div>
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📧 Email</h3>
+          <p><a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a></p>
+        </div>
+        <div class="card" style="margin-bottom: 1rem;">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">📍 Address</h3>
+          <p>GB Haus, Office 17, Kunai Street</p>
+          <p>Section 5, Lot 225, Hohola</p>
+          <p>Port Moresby, NCD</p>
+        </div>
+        <div class="card">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem;">🕐 Hours</h3>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;font-size:0.9rem;">
+            <span>Mon–Fri</span><span style="text-align:right;font-weight:500;">8am – 5pm</span>
+            <span>Saturday</span><span style="text-align:right;font-weight:500;">8am – 1pm</span>
+            <span>Sunday</span><span style="text-align:right;color:var(--text-muted);">Closed</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="img-placeholder" style="min-height: 300px; margin-bottom: 1rem;">[ MAP ]</div>
+        <div class="card" style="background: var(--gold-light); border-color: var(--gold); text-align: center; padding: 2rem;">
+          <h3 style="font-size: 1rem; font-weight: 600; margin-bottom: 0.75rem;">💬 Book via WhatsApp</h3>
+          <p style="font-size: 0.9rem; color: var(--text); margin-bottom: 1rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
+          <a href="https://wa.me/67578352045" class="btn btn-whatsapp" target="_blank">WhatsApp +675 7835 2045</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  BOOK                                                         -->
+<!-- ============================================================ -->
+<section class="section section-alt" id="book">
+  <div class="container" style="max-width: 750px;">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <h2 class="section-title">Book Your Appointment</h2>
+      <p class="section-subtitle">Choose the method that works best for you.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">💬</div>
+        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">WhatsApp</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Chat with our booking assistant. Quick, easy, instant confirmation.</p>
+        <a href="https://wa.me/67578352045" target="_blank" class="btn btn-whatsapp" style="width:100%;justify-content:center;">Book via WhatsApp →</a>
+        <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Recommended — fastest way to book</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📞</div>
+        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Call Us</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Speak directly with our reception team during opening hours.</p>
+        <a href="tel:+67578352045" class="btn btn-gold" style="width:100%;justify-content:center;">Call +675 7835 2045</a>
+        <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Also: +675 7189 4912</p>
+      </div>
+      <div class="card" style="text-align: center; padding: 2rem 1.5rem;">
+        <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📍</div>
+        <h3 style="font-weight: 600; margin-bottom: 0.5rem;">Walk In</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">Visit our clinic in Hohola. Walk-ins welcome, no appointment needed.</p>
+        <div style="background:var(--surface-alt);border-radius:8px;padding:1rem;font-size:0.88rem;">
+          <strong>GB Haus, Office 17</strong><br>Kunai Street, Hohola<br>Port Moresby
+        </div>
+        <p style="margin-top: 0.75rem; font-size: 0.8rem; color: var(--text-muted);">Mon–Fri 8am–5pm · Sat 8am–1pm</p>
+      </div>
+    </div>
+
+    <!-- What to Expect -->
+    <h3 class="serif" style="font-size: 1.5rem; font-weight: 400; margin: 2.5rem 0 1.5rem; text-align: center;">What to Expect</h3>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;">
+      <div class="card" style="display:flex;gap:1rem;align-items:center;">
+        <span style="background:var(--gold);color:var(--text-on-gold);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</span>
+        <div><strong>Arrival & Registration</strong><br><span style="font-size:0.88rem;color:var(--text-muted);">Arrive 10 minutes early. Bring your ID.</span></div>
+      </div>
+      <div class="card" style="display:flex;gap:1rem;align-items:center;">
+        <span style="background:var(--gold);color:var(--text-on-gold);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</span>
+        <div><strong>Consultation</strong><br><span style="font-size:0.88rem;color:var(--text-muted);">Your dentist will examine your teeth and discuss your needs.</span></div>
+      </div>
+      <div class="card" style="display:flex;gap:1rem;align-items:center;">
+        <span style="background:var(--gold);color:var(--text-on-gold);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</span>
+        <div><strong>Treatment Plan</strong><br><span style="font-size:0.88rem;color:var(--text-muted);">We'll explain your options, costs, and timeline — no surprises.</span></div>
+      </div>
+      <div class="card" style="display:flex;gap:1rem;align-items:center;">
+        <span style="background:var(--gold);color:var(--text-on-gold);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">4</span>
+        <div><strong>Treatment & Follow-up</strong><br><span style="font-size:0.88rem;color:var(--text-muted);">Receive your treatment and schedule any follow-up appointments.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!--  FOOTER                                                       -->
+<!-- ============================================================ -->
+<footer>
+  <div class="container">
+    <div>
+      <div class="footer-logo">H</div>
+      <p style="margin-bottom: 0.75rem;">Quality affordable dental care in Port Moresby. Proudly 100% PNG-owned.</p>
+      <p>📍 GB Haus, Office 17, Kunai Street, Hohola, Port Moresby</p>
+    </div>
+    <div>
+      <h4>Links</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#services">Services</a></p>
+      <p><a href="#about">About Us</a></p>
+      <p><a href="#contact">Contact</a></p>
+      <p><a href="#book">Book Appointment</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:+67578352045">+675 7835 2045</a></p>
+      <p><a href="tel:+67571894912">+675 7189 4912</a></p>
+      <p><a href="tel:+67572928301">+675 7292 8301</a></p>
+      <p style="margin-top:0.5rem;"><a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a></p>
+      <p style="margin-top:0.5rem;">🕐 Mon–Fri 8am–5pm · Sat 8am–1pm</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">&copy; 2026 Hope Essence Dental Clinic. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

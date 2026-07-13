@@ -15,25 +15,27 @@ const { title, description } = Astro.props;
     <meta name="description" content={description || "Hope Essence Dental Clinic — Quality affordable dental care in Port Moresby, Papua New Guinea"} />
     <title>{title} | Hope Essence Dental Clinic</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
-
       :root {
-        --primary: #c5a028;
-        --primary-light: #faf3e0;
-        --primary-dark: #a3831e;
-        --accent: #4a4a4a;
-        --accent-light: #f0f0f0;
+        --gold: #F4BE0C;
+        --gold-dark: #C99A06;
+        --gold-light: #faf3e0;
+        --gold-tint: #fdf8ec;
         --text: #4a4a4a;
-        --text-light: #7a7a7a;
+        --text-muted: #7a7a7a;
+        --text-on-gold: #3a2f08;
+        --surface-alt: #f8f5ec;
+        --border: #ece6d8;
+        --topbar-footer: #333333;
+        --whatsapp: #1faf6f;
         --bg: #ffffff;
-        --bg-alt: #f8fafc;
-        --border: #e5e7eb;
         --radius: 12px;
-        --shadow: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
-        --shadow-lg: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
-        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        --radius-sm: 8px;
+        --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+        --shadow-lg: 0 4px 12px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
         --font-serif: 'Playfair Display', Georgia, serif;
+        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
       }
 
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,12 +47,30 @@ const { title, description } = Astro.props;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
       }
-      a { color: var(--primary); text-decoration: none; }
-      a:hover { color: var(--primary-dark); }
+      a { color: var(--text); text-decoration: none; }
+      a:hover { color: var(--gold-dark); }
       img { max-width: 100%; height: auto; }
       .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
-      /* Header */
+      /* ── Top bar ────────────────────────────────────── */
+      .top-bar {
+        background: var(--topbar-footer);
+        color: rgba(255,255,255,0.8);
+        font-size: 0.8rem;
+        padding: 0.4rem 0;
+      }
+      .top-bar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .top-bar a { color: rgba(255,255,255,0.8); }
+      .top-bar a:hover { color: var(--gold); }
+      .top-bar span + span::before { content: "·"; margin: 0 0.5rem; opacity: 0.4; }
+
+      /* ── Header / Nav ──────────────────────────────── */
       header {
         background: var(--bg);
         border-bottom: 1px solid var(--border);
@@ -59,79 +79,181 @@ const { title, description } = Astro.props;
       }
       nav {
         display: flex; align-items: center; justify-content: space-between;
-        padding: 1rem 0; gap: 1rem;
+        padding: 0.75rem 0; gap: 1rem;
       }
       .logo {
-        display: flex; align-items: center; gap: 0.75rem;
-        font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700;
-        color: var(--primary); white-space: nowrap;
+        display: flex; align-items: center; gap: 0.6rem;
+        font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600;
+        color: var(--text); white-space: nowrap;
       }
-      .logo-icon { font-size: 1.8rem; }
-      .nav-links { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+      .logo-icon {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: var(--gold);
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--font-serif); font-weight: 700;
+        font-size: 1.2rem; color: var(--text-on-gold); flex-shrink: 0;
+      }
+      .logo-sub {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 400;
+        color: var(--text-muted);
+        letter-spacing: 0.3px;
+        display: block;
+        margin-top: -2px;
+      }
+      .nav-links { display: flex; gap: 0.25rem; flex-wrap: wrap; align-items: center; }
       .nav-links a {
-        padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.9rem; font-weight: 500;
-        color: var(--text); transition: all .15s;
+        padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 500;
+        color: var(--text); transition: all 0.15s;
       }
-      .nav-links a:hover, .nav-links a.active { background: var(--primary-light); color: var(--primary); }
+      .nav-links a:hover, .nav-links a.active { background: var(--gold-light); color: var(--gold-dark); }
       .nav-cta {
-        background: var(--primary); color: white !important; padding: 0.5rem 1.25rem;
-        border-radius: 8px; font-weight: 600; font-size: 0.9rem;
+        background: var(--gold); color: var(--text-on-gold) !important;
+        padding: 0.5rem 1.25rem; border-radius: var(--radius); font-weight: 600;
       }
-      .nav-cta:hover { background: var(--primary-dark) !important; }
+      .nav-cta:hover { background: var(--gold-dark) !important; color: var(--text-on-gold) !important; }
 
-      /* Footer */
+      /* ── Buttons ───────────────────────────────────── */
+      .btn {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        padding: 0.75rem 1.75rem; border-radius: var(--radius); font-weight: 600;
+        font-size: 0.95rem; border: none; cursor: pointer; transition: all 0.15s;
+        font-family: var(--font-sans);
+      }
+      .btn-gold { background: var(--gold); color: var(--text-on-gold); }
+      .btn-gold:hover { background: var(--gold-dark); color: var(--text-on-gold); }
+      .btn-whatsapp { background: var(--whatsapp); color: white; }
+      .btn-whatsapp:hover { background: #0d9452; color: white; }
+      .btn-outline {
+        background: white; color: var(--text); border: 2px solid var(--border);
+      }
+      .btn-outline:hover { background: var(--surface-alt); border-color: var(--gold); }
+      .btn-ghost {
+        background: transparent; color: var(--text-muted); border: 2px solid var(--border);
+      }
+      .btn-ghost:hover { border-color: var(--gold); color: var(--text); }
+
+      /* ── Typography helpers ─────────────────────────── */
+      .serif { font-family: var(--font-serif); }
+      .text-center { text-align: center; }
+      .section-title {
+        font-family: var(--font-serif); font-size: 2.5rem; font-weight: 400;
+        margin-bottom: 0.5rem; color: var(--text); line-height: 1.2;
+      }
+      .section-subtitle {
+        color: var(--text-muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto;
+      }
+      .section { padding: 4.5rem 0; }
+      .section-alt { background: var(--surface-alt); }
+
+      /* ── Cards ──────────────────────────────────────── */
+      .card {
+        background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+        padding: 1.5rem; transition: all 0.2s;
+      }
+      .card:hover { box-shadow: var(--shadow-lg); border-color: var(--gold); }
+      .card-alt {
+        background: var(--surface-alt); border: 1px solid var(--border);
+        border-radius: var(--radius); padding: 1.5rem;
+      }
+      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; }
+      .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+      .badge {
+        display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px;
+        font-size: 0.8rem; font-weight: 500; background: var(--gold-light); color: var(--gold-dark);
+      }
+      .price-badge {
+        display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
+        font-size: 0.82rem; font-weight: 600; background: var(--gold); color: var(--text-on-gold);
+      }
+
+      /* ── Icons inline ────────────────────────────────── */
+      .icon-gold {
+        stroke: var(--gold);
+        stroke-width: 2;
+        fill: none;
+        width: 24px; height: 24px;
+        flex-shrink: 0;
+      }
+
+      /* ── Footer ──────────────────────────────────────── */
       footer {
-        background: #333333; color: #cbd5e1; padding: 3rem 0 2rem; margin-top: 4rem;
+        background: var(--topbar-footer); color: #cbd5e1; padding: 3rem 0 2rem;
       }
       footer .container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
-      footer h4 { color: white; font-size: 1rem; margin-bottom: 1rem; }
+      footer h4 { color: white; font-family: var(--font-serif); font-size: 1rem; margin-bottom: 1rem; }
       footer p, footer a { font-size: 0.88rem; color: #94a3b8; line-height: 1.8; }
-      footer a:hover { color: white; }
-      .footer-bottom { border-top: 1px solid #334155; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; color: #64748b; }
-      .footer-bottom .container { display: block; }
+      footer a:hover { color: var(--gold); }
+      .footer-logo {
+        width: 40px; height: 40px; border-radius: 50%;
+        background: var(--gold);
+        display: inline-flex; align-items: center; justify-content: center;
+        font-family: var(--font-serif); font-weight: 700;
+        font-size: 1.1rem; color: var(--text-on-gold);
+        margin-bottom: 0.75rem;
+      }
+      .footer-bottom {
+        border-top: 1px solid #4a4a4a;
+        margin-top: 2rem; padding-top: 1.5rem;
+        text-align: center; font-size: 0.82rem; color: #64748b;
+      }
 
       @media (max-width: 768px) {
         footer .container { grid-template-columns: 1fr; }
         nav { flex-wrap: wrap; }
         .nav-links { order: 3; width: 100%; justify-content: center; }
+        .section-title { font-size: 1.8rem; }
+        .top-bar span + span::before { content: ""; display: block; margin: 0; }
+        .top-bar .container { justify-content: center; }
       }
 
-      /* Utility */
-      .btn {
-        display: inline-flex; align-items: center; gap: 0.5rem;
-        padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
-        font-size: 0.95rem; border: none; cursor: pointer; transition: all .15s;
-      }
-      .btn-primary { background: var(--primary); color: white; }
-      .btn-primary:hover { background: var(--primary-dark); color: white; }
-      .btn-accent { background: var(--accent); color: white; }
-      .btn-accent:hover { background: #333333; }
-      .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
-      .btn-outline:hover { background: var(--primary-light); }
-      .text-center { text-align: center; }
-      .section { padding: 4rem 0; }
-      .section-title { font-family: var(--font-serif); font-size: 2rem; margin-bottom: 0.75rem; color: var(--text); }
-      .section-subtitle { color: var(--text-light); font-size: 1.05rem; max-width: 600px; }
-      .card {
-        background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
-        padding: 1.5rem; transition: all .2s;
-      }
-      .card:hover { box-shadow: var(--shadow-lg); border-color: var(--primary); }
-      .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-      .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; }
-      .badge {
-        display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px;
-        font-size: 0.8rem; font-weight: 500; background: var(--primary-light); color: var(--primary);
+      /* ── Image placeholders ──────────────────────────── */
+      .img-placeholder {
+        background: repeating-linear-gradient(
+          -45deg,
+          var(--border),
+          var(--border) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        font-family: ui-monospace, monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        min-height: 200px;
       }
     </style>
   </head>
   <body>
+    <!-- Top bar -->
+    <div class="top-bar">
+      <div class="container">
+        <span><a href="tel:+67578352045">📞 +675 7835 2045</a></span>
+        <span>
+          <span>Mon–Fri 8am–5pm</span>
+          <span>Sat 8am–1pm</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Header -->
     <header>
       <div class="container">
         <nav>
           <a href="/" class="logo">
-            <span class="logo-icon">🦷</span>
-            <span>Hope Essence Dental</span>
+            <span class="logo-icon">H</span>
+            <span>
+              Hope Essence
+              <span class="logo-sub">Dental Clinic</span>
+            </span>
           </a>
           <div class="nav-links">
             <a href="/">Home</a>
@@ -151,15 +273,15 @@ const { title, description } = Astro.props;
     <footer>
       <div class="container">
         <div>
-          <h4>🦷 Hope Essence Dental Clinic</h4>
-          <p>Quality affordable dental care for all ages. Proudly 100% PNG-owned and operated in Port Moresby.</p>
-          <p style="margin-top: 0.75rem;">
-            📍 GB Haus, Office 17, Kunai Street<br />
-            Section 5, Lot 225, Hohola, Port Moresby
+          <div class="footer-logo">H</div>
+          <p style="margin-bottom: 0.75rem;">
+            Quality affordable dental care in Port Moresby. Proudly 100% PNG-owned.
           </p>
+          <p>📍 GB Haus, Office 17, Kunai Street</p>
+          <p>Section 5, Lot 225, Hohola, Port Moresby</p>
         </div>
         <div>
-          <h4>Quick Links</h4>
+          <h4>Links</h4>
           <p><a href="/">Home</a></p>
           <p><a href="/services">Services</a></p>
           <p><a href="/about">About Us</a></p>
@@ -168,16 +290,19 @@ const { title, description } = Astro.props;
         </div>
         <div>
           <h4>Contact</h4>
-          <p>📞 +675 7835 2045</p>
-          <p>📞 +675 7189 4912</p>
-          <p>📧 hopeessencedentalclinic@gmail.com</p>
+          <p><a href="tel:+67578352045">+675 7835 2045</a></p>
+          <p><a href="tel:+67571894912">+675 7189 4912</a></p>
+          <p><a href="tel:+67572928301">+675 7292 8301</a></p>
+          <p style="margin-top: 0.5rem;">
+            <a href="mailto:hopeessencedentalclinic@gmail.com">hopeessencedentalclinic@gmail.com</a>
+          </p>
           <p style="margin-top: 0.5rem;">🕐 Mon–Fri 8am–5pm</p>
           <p>🕐 Sat 8am–1pm</p>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="container">
-          &copy; {new Date().getFullYear()} Hope Essence Dental Clinic. All rights reserved. | Site by <a href="https://kumi-tech.com">Kumi Tech</a>
+          &copy; {new Date().getFullYear()} Hope Essence Dental Clinic. All rights reserved.
         </div>
       </div>
     </footer>

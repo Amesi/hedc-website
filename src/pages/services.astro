@@ -2,24 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 
 const services = [
-  { icon: '🦷', name: 'General Dental Check-up', dur: '30 min', desc: 'Comprehensive oral examination including visual inspection, gum assessment, and oral cancer screening.' },
-  { icon: '✨', name: 'Teeth Cleaning (Scale & Polish)', dur: '45 min', desc: 'Professional removal of plaque, tartar, and surface stains for a cleaner, healthier smile.' },
-  { icon: '🛠️', name: 'Tooth Filling (Restoration)', dur: '45 min', desc: 'Composite/white fillings to restore teeth damaged by cavities. Natural-looking results.' },
-  { icon: '🔧', name: 'Tooth Extraction', dur: '30 min', desc: 'Gentle, professional tooth removal when needed. We prioritise your comfort throughout.' },
-  { icon: '🔬', name: 'Root Canal Therapy', dur: '90 min', desc: 'Save an infected or damaged tooth with professional root canal treatment. Pain-free with modern anaesthesia.' },
-  { icon: '🌟', name: 'Teeth Whitening', dur: '60 min', desc: 'Professional whitening treatment for a noticeably brighter smile in just one session.' },
-  { icon: '💎', name: 'Crown & Bridge', dur: '90 min', desc: 'Durable crowns and bridges to restore function and appearance of damaged or missing teeth.' },
-  { icon: '🦷', name: 'Dental Implant Consultation', dur: '45 min', desc: 'Comprehensive assessment and treatment planning for dental implants.' },
-  { icon: '🍃', name: 'Buai Stain Removal', dur: '45 min', desc: 'Specialised deep cleaning to remove betel nut stains and restore your natural tooth colour.' },
-  { icon: '👶', name: "Children's Dentistry", dur: '30 min', desc: 'Gentle, fun dental check-ups for kids. Building healthy habits from an early age.' },
+  { icon: '🦷', name: 'General Dental Check-up', price: 'K150', dur: '30 min', desc: 'Comprehensive oral examination including visual inspection, gum assessment, and oral cancer screening.' },
+  { icon: '✨', name: 'Teeth Cleaning (Scale & Polish)', price: 'K200', dur: '45 min', desc: 'Professional removal of plaque, tartar, and surface stains for a cleaner, healthier smile.' },
+  { icon: '🛠️', name: 'Tooth Filling (Restoration)', price: 'K250', dur: '45 min', desc: 'Composite/white fillings to restore teeth damaged by cavities. Natural-looking results.' },
+  { icon: '🔧', name: 'Tooth Extraction', price: 'K200', dur: '30 min', desc: 'Gentle, professional tooth removal when needed. We prioritise your comfort throughout.' },
+  { icon: '🔬', name: 'Root Canal Therapy', price: 'K800', dur: '90 min', desc: 'Save an infected or damaged tooth with professional root canal treatment. Pain-free with modern anaesthesia.' },
+  { icon: '🌟', name: 'Teeth Whitening', price: 'K500', dur: '60 min', desc: 'Professional whitening treatment for a noticeably brighter smile in just one session.' },
+  { icon: '💎', name: 'Crown & Bridge', price: 'K1,200', dur: '90 min', desc: 'Durable crowns and bridges to restore function and appearance of damaged or missing teeth.' },
+  { icon: '🦷', name: 'Dental Implant Consultation', price: 'K300', dur: '45 min', desc: 'Comprehensive assessment and treatment planning for dental implants.' },
+  { icon: '🍃', name: 'Buai Stain Removal', price: 'K180', dur: '45 min', desc: 'Specialised deep cleaning to remove betel nut stains and restore your natural tooth colour. 🇵🇬 PNG favourite!' },
+  { icon: '👶', name: "Children's Dentistry", price: 'K120', dur: '30 min', desc: 'Gentle, fun dental check-ups for kids. Building healthy habits from an early age.' },
 ];
 ---
 
 <Layout title="Our Services — Hope Essence Dental Clinic">
-  <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; padding: 4rem 0 3rem;">
+  <section style="background: var(--gold-tint); padding: 4rem 0 3rem;">
     <div class="container" style="text-align: center;">
-      <h1 style="font-family: var(--font-serif); font-size: 2.4rem; margin-bottom: 0.75rem;">Our Dental Services</h1>
-      <p style="opacity: .9; max-width: 550px; margin: 0 auto;">Comprehensive dental care for every stage of life.</p>
+      <h1 class="section-title" style="font-size: 3rem;">Our Services</h1>
+      <p class="section-subtitle" style="max-width: 500px;">Comprehensive dental care for the whole family. Transparent pricing, quality treatment.</p>
     </div>
   </section>
 
@@ -28,13 +28,14 @@ const services = [
       <div class="grid-2">
         {services.map((s) => (
           <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
-            <div style="font-size: 2.5rem; flex-shrink: 0;">{s.icon}</div>
-            <div>
+            <div style="font-size: 2rem; flex-shrink: 0; width: 48px; text-align: center;">{s.icon}</div>
+            <div style="flex: 1;">
               <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
-                <h3 style="font-size: 1.1rem;">{s.name}</h3>
-                <span style="font-size: .8rem; color: var(--text-light);">{s.dur}</span>
+                <h3 style="font-size: 1.05rem; font-weight: 600;">{s.name}</h3>
+                <span class="price-badge">{s.price}</span>
+                <span style="font-size: 0.78rem; color: var(--text-muted);">{s.dur}</span>
               </div>
-              <p style="font-size: .9rem; color: var(--text-light);">{s.desc}</p>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">{s.desc}</p>
             </div>
           </div>
         ))}
@@ -42,12 +43,11 @@ const services = [
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="background: var(--bg-alt); text-align: center;">
+  <section class="section section-alt" style="text-align: center;">
     <div class="container" style="max-width: 550px;">
-      <h2 class="section-title">Not Sure What You Need?</h2>
-      <p style="color: var(--text-light); margin-bottom: 1.5rem;">Call or WhatsApp us — our team will help you choose the right service.</p>
-      <a href="/book" class="btn btn-primary">📅 Book a Consultation</a>
+      <h2 class="section-title">Not sure what you need?</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Call or WhatsApp us — our team will help you choose the right service.</p>
+      <a href="/book" class="btn btn-gold">📅 Book a Consultation</a>
     </div>
   </section>
 </Layout>
