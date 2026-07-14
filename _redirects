@@ -1,0 +1,9 @@
+# Cloudflare Pages redirect rules
+# Format: source  destination  status_code
+
+# Redirect bare domain to www (update if using apex-only)
+# http://hedc.com.pg/*  https://www.hedc.com.pg/:splat  301
+
+# Redirect old file-name URLs if ever shared publicly
+/HEDC%20Website.dc.html  /  301
+/HEDC%20Redesign.dc.html  /  301

@@ -1,0 +1,12 @@
+# Design tool source files — not for public deployment
+HEDC Redesign.dc.html
+
+# OMC / Claude Code session state
+.omc/
+
+# Design tool thumbnail
+.thumbnail
+
+# OS artefacts
+.DS_Store
+Thumbs.db
